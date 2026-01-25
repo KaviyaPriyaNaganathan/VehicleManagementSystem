@@ -28,7 +28,7 @@ public class User {
 	private String username;
 	
 	@Column(nullable = false)
-	private String pasword;
+	private String password;
 	
 	@Column(nullable = false)
 	@Enumerated(EnumType.STRING)
@@ -46,12 +46,12 @@ public class User {
 	private LocalDateTime lastLoginAt;
 	
 	
-	public User(Long id, String username, String pasword, UserRole role, boolean active, LocalDateTime createdAt,
+	public User(Long id, String username, String password, UserRole role, boolean active, LocalDateTime createdAt,
 			LocalDateTime lastLoginAt) {
 		super();
 		this.id = id;
 		this.username = username;
-		this.pasword = pasword;
+		this.password = password;
 		this.role = role;
 		this.active = active;
 		this.createdAt = createdAt;
@@ -85,13 +85,13 @@ public class User {
 	}
 
 
-	public String getPasword() {
-		return pasword;
+	public String getPassword() {
+		return password;
 	}
 
 
-	public void setPasword(String pasword) {
-		this.pasword = pasword;
+	public void setPasword(String password) {
+		this.password = password;
 	}
 
 

@@ -1,0 +1,7 @@
+package com.vehicle.service.impl;
+
+import com.vehicle.service.StockService;
+
+public class StockServiceImpl extends StockService{
+
+}

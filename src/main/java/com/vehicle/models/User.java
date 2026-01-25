@@ -35,7 +35,7 @@ public class User {
 	private UserRole role;
 	
 	@Column(nullable = false)
-	private Boolean active =true;
+	private Boolean active=true;
 	
 	@Column(nullable = false)
 	@CreationTimestamp

@@ -4,29 +4,32 @@ import com.vehicle.dto.request.UserRequestDTO;
 import com.vehicle.dto.response.UserResponseDTO;
 import com.vehicle.models.User;
 
+package com.vehicle.mapper;
+
+import com.vehicle.dto.request.UserRequestDTO;
+import com.vehicle.dto.response.UserResponseDTO;
+import com.vehicle.models.User;
+
 public class UserMapper {
 
-	public User toEntity(UserRequestDTO dto)
-	{
-		User user = new User();
-		user.setUsername(dto.getUsername());
-		user.setPasword(dto.getPassword());
-		user.setRole(dto.getRole());
-		
-		return user;
-	}
-	
-	public UserResponseDTO toResponse(User dto)
-	{
-		UserResponseDTO response = new UserResponseDTO();
-		response.setUsername(dto.getUsername());
-		response.setRole(dto.getRole());
-		response.setCreatedAt(dto.getCreatedAt());
-		response.setRole(dto.getRole());
-		response.setActive(dto.isActive());
-		response.setCreatedAt(dto.getCreatedAt());
-		response.setLastLoginAt(dto.getLastLoginAt());
-		
-		return response;
-	}
+    public static User toEntity(UserRequestDTO dto) {
+        User user = new User();
+        user.setUsername(dto.getUsername());
+        user.setPasword(dto.getPassword());
+        user.setRole(dto.getRole());
+        user.setActive(dto.getActive() == null ? true : dto.getActive());
+
+        return user;
+    }
+
+    public static UserResponseDTO toResponse(User entity) {
+        UserResponseDTO response = new UserResponseDTO();
+        response.setId(entity.getId());
+        response.setUsername(entity.getUsername());
+        response.setRole(entity.getRole());
+        response.setActive(entity.isActive());
+        response.setCreatedAt(entity.getCreatedAt());
+        response.setLastLoginAt(entity.getLastLoginAt());
+        return response;
+    }
 }

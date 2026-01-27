@@ -1,5 +1,7 @@
 package com.vehicle.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,6 +38,42 @@ public class UserServiceImpl implements UserService{
 		
 		return UserMapper.toResponse(savedUser);
 		
+	}
+
+
+	@Override
+	public List<UserResponseDTO> getAllUsers() {
+		// TODO Auto-generated method stub
+		
+		return userRepository.findAll()
+				.stream()
+				.map(UserMapper::toResponse)
+				.toList();
+	}
+
+
+	@Override
+	public UserResponseDTO getUserById(Long id) {
+		// TODO Auto-generated method stub
+		
+		User user = userRepository.findById(id).orElseThrow(()->new RuntimeException("User not found with id "+id));
+		
+		return UserMapper.toResponse(user);
+	}
+
+
+	@Override
+	public UserResponseDTO deactivateUser(Long id) {
+		// TODO Auto-generated method stub
+		User user = userRepository.findById(id).orElseThrow(()->new RuntimeException("User not found with id "+id));
+		
+		user.setActive(false);
+		
+		User savedUser = userRepository.save(user);
+		
+		
+		
+		return UserMapper.toResponse(savedUser);
 	}
 
 

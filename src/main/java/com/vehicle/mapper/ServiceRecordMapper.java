@@ -6,7 +6,7 @@ import com.vehicle.models.ServiceRecord;
 
 public class ServiceRecordMapper {
 
-	public ServiceRecord toEntity(ServiceRecordRequestDTO dto)
+	public  static ServiceRecord toEntity(ServiceRecordRequestDTO dto)
 	{
 		ServiceRecord serviceRecord = new ServiceRecord();
 		serviceRecord.setId(dto.getId());
@@ -19,7 +19,7 @@ public class ServiceRecordMapper {
 		return serviceRecord;
 	}
 	
-	public ServiceRecordResponseDTO toResponse(ServiceRecord dto)
+	public static ServiceRecordResponseDTO toResponse(ServiceRecord dto)
 	{
 		ServiceRecordResponseDTO response = new ServiceRecordResponseDTO();
 		response.setId(dto.getId());

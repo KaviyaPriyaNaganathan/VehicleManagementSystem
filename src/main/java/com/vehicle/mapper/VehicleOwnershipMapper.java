@@ -6,7 +6,7 @@ import com.vehicle.models.VehicleOwnership;
 
 public class VehicleOwnershipMapper {
 
-	public VehicleOwnership toEntity(VehicleOwnershipRequestDTO dto)
+	public static VehicleOwnership toEntity(VehicleOwnershipRequestDTO dto)
 	{
 		VehicleOwnership vehicleOwnership = new VehicleOwnership();
 		vehicleOwnership.setCustomerId(dto.getCustomerId());
@@ -19,7 +19,7 @@ public class VehicleOwnershipMapper {
 		
 	}
 	
-	public VehicleOwnershipResponseDTO toResponse(VehicleOwnership dto)
+	public static VehicleOwnershipResponseDTO toResponse(VehicleOwnership dto)
 	{
 		VehicleOwnershipResponseDTO response = new VehicleOwnershipResponseDTO();
 		response.setCustomerId(dto.getCustomerId());

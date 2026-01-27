@@ -6,7 +6,7 @@ import com.vehicle.models.SparePartUsage;
 
 public class SparePartUsageMapper {
 
-	public SparePartUsage toEntity(SparePartUsageRequestDTO dto)
+	public static SparePartUsage toEntity(SparePartUsageRequestDTO dto)
 	{
 		SparePartUsage sparePartUsage = new SparePartUsage();
 		sparePartUsage.setId(dto.getId());
@@ -18,7 +18,7 @@ public class SparePartUsageMapper {
 		return sparePartUsage;
 	}
 	
-	public SparePartUsageResponseDTO toResponse(SparePartUsage dto)
+	public static SparePartUsageResponseDTO toResponse(SparePartUsage dto)
 	{
 		SparePartUsageResponseDTO response = new SparePartUsageResponseDTO();
 		response.setId(dto.getId());

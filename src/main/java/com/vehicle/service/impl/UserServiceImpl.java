@@ -71,8 +71,6 @@ public class UserServiceImpl implements UserService{
 		
 		User savedUser = userRepository.save(user);
 		
-		
-		
 		return UserMapper.toResponse(savedUser);
 	}
 

@@ -6,7 +6,7 @@ import com.vehicle.models.Stock;
 
 public class StockMapper {
 
-	public Stock toEntity(StockRequestDTO dto)
+	public static Stock toEntity(StockRequestDTO dto)
 	{
 		Stock stock = new Stock();
 		stock.setId(dto.getId());
@@ -18,7 +18,7 @@ public class StockMapper {
 		return stock;
 	}
 	
-	public StockResponseDTO toResponse(Stock dto)
+	public static StockResponseDTO toResponse(Stock dto)
 	{
 		StockResponseDTO response = new StockResponseDTO();
 		response.setId(dto.getId());

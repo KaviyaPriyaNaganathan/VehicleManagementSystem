@@ -1,7 +1,6 @@
 package com.vehicle.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +11,7 @@ import com.vehicle.dto.response.VehicleResponseDTO;
 import com.vehicle.service.VehicleService;
 
 @RestController
-@RequestMapping("/api/vehicle")
+@RequestMapping("/api/vehicles")
 public class VehicleController {
 
 	
@@ -26,7 +25,7 @@ public class VehicleController {
 	
 	
 	@PostMapping
-	public ResponseEntity<VehicleResponseDTO> createVehicle(@RequestBody VehicleRequestDTO vehicle)
+	public VehicleResponseDTO createVehicle(@RequestBody VehicleRequestDTO vehicle)
 	{
 		return vehicleService.createVehicle(vehicle);
 	}

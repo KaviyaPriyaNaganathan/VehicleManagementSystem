@@ -8,7 +8,7 @@ import com.vehicle.models.ReturnStorage;
 
 public class ReturnStorageMapper {
 
-	public ReturnStorage toEntity(ReturnStorageRequestDTO dto)
+	public static ReturnStorage toEntity(ReturnStorageRequestDTO dto)
 	{
 		ReturnStorage returnStorage = new ReturnStorage();
 		returnStorage.setVehicle(dto.getVehicle());
@@ -21,7 +21,7 @@ public class ReturnStorageMapper {
 	}
 	
 	
-	public ReturnStorageResponseDTO toResponse(ReturnStorage dto)
+	public static ReturnStorageResponseDTO toResponse(ReturnStorage dto)
 	{
 	
 		ReturnStorageResponseDTO response = new ReturnStorageResponseDTO();

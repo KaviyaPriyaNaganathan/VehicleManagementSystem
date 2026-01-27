@@ -6,7 +6,7 @@ import com.vehicle.models.Vehicle;
 
 public class VehicleMapper {
 
-	public Vehicle toEntity(VehicleRequestDTO dto)
+	public static Vehicle toEntity(VehicleRequestDTO dto)
 	{
 		Vehicle vehicle = new Vehicle();
 		vehicle.setId(dto.getId());
@@ -20,7 +20,7 @@ public class VehicleMapper {
 		return vehicle;
 	}
 	
-	public VehicleResponseDTO toResponse(Vehicle dto)
+	public static VehicleResponseDTO toResponse(Vehicle dto)
 	{
 		VehicleResponseDTO response = new VehicleResponseDTO();
 		response.setBrand(dto.getBrand());

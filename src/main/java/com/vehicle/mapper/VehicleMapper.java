@@ -23,6 +23,7 @@ public class VehicleMapper {
 	public static VehicleResponseDTO toResponse(Vehicle dto)
 	{
 		VehicleResponseDTO response = new VehicleResponseDTO();
+		response.setId(dto.getId());
 		response.setBrand(dto.getBrand());
 		response.setChassisNumber(dto.getChassisNumber());
 		response.setCreatedAt(dto.getCreatedAt());

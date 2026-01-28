@@ -1,87 +1,83 @@
 package com.vehicle.dto.response;
 
+
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import com.vehicle.enums.ReturnType;
-import com.vehicle.models.Vehicle;
 
 public class ReturnStorageResponseDTO {
 
-	private Long id;
+    private Long id;
+    private Long vehicleId;
+    private ReturnType returnType;
+    private String reason;
+    private LocalDate returnDate;
+    private String storageLocation;
+    private BigDecimal  returnFee;
+    private Long paymentId;
 
-	private Vehicle vehicle;
-	
-	private ReturnType returnType;
-	
-	private String reason;
-	
-	private LocalDate returnDate;
-	
-	private String storageLocation;
+    public Long getId() {
+        return id;
+    }
 
-	public ReturnStorageResponseDTO(Long id, Vehicle vehicle, ReturnType returnType, String reason,
-			LocalDate returnDate, String storageLocation) {
-		super();
-		this.id = id;
-		this.vehicle = vehicle;
-		this.returnType = returnType;
-		this.reason = reason;
-		this.returnDate = returnDate;
-		this.storageLocation = storageLocation;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public ReturnStorageResponseDTO() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    public Long getVehicleId() {
+        return vehicleId;
+    }
 
-	public Long getId() {
-		return id;
-	}
+    public void setVehicleId(Long vehicleId) {
+        this.vehicleId = vehicleId;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public ReturnType getReturnType() {
+        return returnType;
+    }
 
-	public Vehicle getVehicle() {
-		return vehicle;
-	}
+    public void setReturnType(ReturnType returnType) {
+        this.returnType = returnType;
+    }
 
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
-	}
+    public String getReason() {
+        return reason;
+    }
 
-	public ReturnType getReturnType() {
-		return returnType;
-	}
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
 
-	public void setReturnType(ReturnType returnType) {
-		this.returnType = returnType;
-	}
+    public LocalDate getReturnDate() {
+        return returnDate;
+    }
 
-	public String getReason() {
-		return reason;
-	}
+    public void setReturnDate(LocalDate returnDate) {
+        this.returnDate = returnDate;
+    }
 
-	public void setReason(String reason) {
-		this.reason = reason;
-	}
+    public String getStorageLocation() {
+        return storageLocation;
+    }
 
-	public LocalDate getReturnDate() {
-		return returnDate;
-	}
+    public void setStorageLocation(String storageLocation) {
+        this.storageLocation = storageLocation;
+    }
 
-	public void setReturnDate(LocalDate returnDate) {
-		this.returnDate = returnDate;
-	}
+    public BigDecimal  getReturnFee() {
+        return returnFee;
+    }
 
-	public String getStorageLocation() {
-		return storageLocation;
-	}
+    public void setReturnFee(BigDecimal  returnFee) {
+        this.returnFee = returnFee;
+    }
 
-	public void setStorageLocation(String storageLocation) {
-		this.storageLocation = storageLocation;
-	}
-	
-	
+    public Long getPaymentId() {
+        return paymentId;
+    }
+
+    public void setPaymentId(Long paymentId) {
+        this.paymentId = paymentId;
+    }
 }

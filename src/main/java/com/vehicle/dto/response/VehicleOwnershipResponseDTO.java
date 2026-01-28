@@ -1,124 +1,84 @@
 package com.vehicle.dto.response;
 
 import java.time.LocalDate;
-
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+import java.time.LocalDateTime;
 
 import com.vehicle.enums.OwnershipStatus;
-import com.vehicle.models.User;
-import com.vehicle.models.Vehicle;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 
 public class VehicleOwnershipResponseDTO {
 
-	private Long id;
-	
+    private Long id;
+    private Long vehicleId;
+    private Long customerId;
+    private LocalDate ownershipStartDate;
+    private LocalDate ownershipEndDate;
+    private OwnershipStatus status;
+    private LocalDateTime createdDate;
+    private LocalDateTime updatedDate;
 
-	private Vehicle vehicle;
-	
-	private User customerId;
-	
+    public VehicleOwnershipResponseDTO() {}
 
-	private LocalDate ownershipStartDate;
-	
-	private LocalDate ownershipEndDate;
-	
-	private OwnershipStatus status;
-	
-	private LocalDate createdDate;
-	
-	private LocalDate updatedDate;
+    public Long getId() {
+        return id;
+    }
 
-	public VehicleOwnershipResponseDTO(Long id, Vehicle vehicle, User customerId, LocalDate ownershipStartDate,
-			LocalDate ownershipEndDate, OwnershipStatus status, LocalDate createdDate, LocalDate updatedDate) {
-		super();
-		this.id = id;
-		this.vehicle = vehicle;
-		this.customerId = customerId;
-		this.ownershipStartDate = ownershipStartDate;
-		this.ownershipEndDate = ownershipEndDate;
-		this.status = status;
-		this.createdDate = createdDate;
-		this.updatedDate = updatedDate;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public VehicleOwnershipResponseDTO() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    public Long getVehicleId() {
+        return vehicleId;
+    }
 
-	public Long getId() {
-		return id;
-	}
+    public void setVehicleId(Long vehicleId) {
+        this.vehicleId = vehicleId;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public Long getCustomerId() {
+        return customerId;
+    }
 
-	public Vehicle getVehicle() {
-		return vehicle;
-	}
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
+    }
 
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
-	}
+    public LocalDate getOwnershipStartDate() {
+        return ownershipStartDate;
+    }
 
-	public User getCustomerId() {
-		return customerId;
-	}
+    public void setOwnershipStartDate(LocalDate ownershipStartDate) {
+        this.ownershipStartDate = ownershipStartDate;
+    }
 
-	public void setCustomerId(User customerId) {
-		this.customerId = customerId;
-	}
+    public LocalDate getOwnershipEndDate() {
+        return ownershipEndDate;
+    }
 
-	public LocalDate getOwnershipStartDate() {
-		return ownershipStartDate;
-	}
+    public void setOwnershipEndDate(LocalDate ownershipEndDate) {
+        this.ownershipEndDate = ownershipEndDate;
+    }
 
-	public void setOwnershipStartDate(LocalDate ownershipStartDate) {
-		this.ownershipStartDate = ownershipStartDate;
-	}
+    public OwnershipStatus getStatus() {
+        return status;
+    }
 
-	public LocalDate getOwnershipEndDate() {
-		return ownershipEndDate;
-	}
+    public void setStatus(OwnershipStatus status) {
+        this.status = status;
+    }
 
-	public void setOwnershipEndDate(LocalDate ownershipEndDate) {
-		this.ownershipEndDate = ownershipEndDate;
-	}
+    public LocalDateTime getCreatedDate() {
+        return createdDate;
+    }
 
-	public OwnershipStatus getStatus() {
-		return status;
-	}
+    public void setCreatedDate(LocalDateTime createdDate) {
+        this.createdDate = createdDate;
+    }
 
-	public void setStatus(OwnershipStatus status) {
-		this.status = status;
-	}
+    public LocalDateTime getUpdatedDate() {
+        return updatedDate;
+    }
 
-	public LocalDate getCreatedDate() {
-		return createdDate;
-	}
-
-	public void setCreatedDate(LocalDate createdDate) {
-		this.createdDate = createdDate;
-	}
-
-	public LocalDate getUpdatedDate() {
-		return updatedDate;
-	}
-
-	public void setUpdatedDate(LocalDate updatedDate) {
-		this.updatedDate = updatedDate;
-	}
-	
-	
+    public void setUpdatedDate(LocalDateTime updatedDate) {
+        this.updatedDate = updatedDate;
+    }
 }

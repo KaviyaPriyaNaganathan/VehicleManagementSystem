@@ -3,29 +3,48 @@ package com.vehicle.mapper;
 import com.vehicle.dto.request.StockRequestDTO;
 import com.vehicle.dto.response.StockResponseDTO;
 import com.vehicle.models.Stock;
+import com.vehicle.models.Vehicle;
+
+
 
 public class StockMapper {
 
-	public static Stock toEntity(StockRequestDTO dto)
-	{
-		Stock stock = new Stock();
-		stock.setId(dto.getId());
-	    stock.setQuantity(dto.getQuantity());
-	    stock.setAvailable(dto.getAvailable());
-	    stock.setLocation(dto.getLocation());
-	    return stock;
-	}
-	
-	public static StockResponseDTO toResponse(Stock dto)
-	{
-		StockResponseDTO response = new StockResponseDTO();
-		response.setId(dto.getId());
-		response.setAddedDate(dto.getAddedDate());
-		response.setAvailable(dto.getAvailable());
-		response.setLocation(dto.getLocation());
-		response.setQuantity(dto.getQuantity());
-		response.setVehicle(dto.getVehicle());
-		
-		return response;
-	}
+    public static Stock toEntity(StockRequestDTO dto, Vehicle vehicle) {
+
+        Stock stock = new Stock();
+
+        stock.setVehicle(vehicle);           // ✅ ONLY this
+        stock.setQuantity(dto.getQuantity());
+        stock.setLocation(dto.getLocation());
+        stock.setUnitPrice(dto.getUnitPrice());
+        stock.setCurrency(dto.getCurrency());
+        stock.setPaymentStatus(dto.getPaymentStatus());
+        stock.setLastPaymentDate(dto.getLastPaymentDate());
+
+        return stock;
+    }
+
+    public static StockResponseDTO toResponse(Stock stock) {
+
+        StockResponseDTO dto = new StockResponseDTO();
+
+        dto.setId(stock.getId());
+        dto.setQuantity(stock.getQuantity());
+        dto.setAvailable(stock.getAvailable());
+        dto.setLocation(stock.getLocation());
+        dto.setAddedDate(stock.getAddedDate());
+        dto.setUnitPrice(stock.getUnitPrice());
+        dto.setTotalPrice(stock.getTotalPrice());
+        dto.setCurrency(stock.getCurrency());
+        dto.setPaymentStatus(stock.getPaymentStatus());
+        dto.setLastPaymentDate(stock.getLastPaymentDate());
+
+        // ✅ IMPORTANT
+        if (stock.getVehicle() != null) {
+            dto.setVehicleId(stock.getVehicle().getId());
+            dto.setVehicle(stock.getVehicle()); // optional
+        }
+
+        return dto;
+    }
 }

@@ -5,25 +5,22 @@ import com.vehicle.dto.response.UserResponseDTO;
 import com.vehicle.models.User;
 
 public class UserMapper {
-
     public static User toEntity(UserRequestDTO dto) {
         User user = new User();
         user.setUsername(dto.getUsername());
-        user.setPasword(dto.getPassword());
+        user.setPassword(dto.getPassword());
         user.setRole(dto.getRole());
         user.setActive(dto.getActive());
-
         return user;
     }
-
-    public static UserResponseDTO toResponse(User entity) {
+    public static UserResponseDTO toResponse(User user) {
         UserResponseDTO response = new UserResponseDTO();
-        response.setId(entity.getId());
-        response.setUsername(entity.getUsername());
-        response.setRole(entity.getRole());
-        response.setActive(entity.isActive());
-        response.setCreatedAt(entity.getCreatedAt());
-        response.setLastLoginAt(entity.getLastLoginAt());
+        response.setId(user.getId());
+        response.setUsername(user.getUsername());
+        response.setRole(user.getRole());
+        response.setActive(user.getActive());
+        response.setCreatedAt(user.getCreatedAt());
+        response.setLastLoginAt(user.getLastLoginAt());
         return response;
     }
 }

@@ -1,80 +1,77 @@
 package com.vehicle.dto.request;
 
+
+
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import com.vehicle.enums.ReturnType;
-import com.vehicle.models.Vehicle;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 
 public class ReturnStorageRequestDTO {
 
-	private Vehicle vehicle;
-	
-	private ReturnType returnType;
-	
-	private String reason;
-	
-	private LocalDate returnDate;
-	
-	private String storageLocation;
+    private Long vehicleId;
+    private ReturnType returnType;
+    private String reason;
+    private LocalDate returnDate;
+    private String storageLocation;
+    private BigDecimal  returnFee;
 
-	public ReturnStorageRequestDTO(Vehicle vehicle, ReturnType returnType, String reason, LocalDate returnDate,
-			String storageLocation) {
-		super();
-		this.vehicle = vehicle;
-		this.returnType = returnType;
-		this.reason = reason;
-		this.returnDate = returnDate;
-		this.storageLocation = storageLocation;
-	}
+    // Payment related
+    private Long paymentId;
 
-	public ReturnStorageRequestDTO() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    public Long getVehicleId() {
+        return vehicleId;
+    }
 
-	public Vehicle getVehicle() {
-		return vehicle;
-	}
+    public void setVehicleId(Long vehicleId) {
+        this.vehicleId = vehicleId;
+    }
 
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
-	}
+    public ReturnType getReturnType() {
+        return returnType;
+    }
 
-	public ReturnType getReturnType() {
-		return returnType;
-	}
+    public void setReturnType(ReturnType returnType) {
+        this.returnType = returnType;
+    }
 
-	public void setReturnType(ReturnType returnType) {
-		this.returnType = returnType;
-	}
+    public String getReason() {
+        return reason;
+    }
 
-	public String getReason() {
-		return reason;
-	}
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
 
-	public void setReason(String reason) {
-		this.reason = reason;
-	}
+    public LocalDate getReturnDate() {
+        return returnDate;
+    }
 
-	public LocalDate getReturnDate() {
-		return returnDate;
-	}
+    public void setReturnDate(LocalDate returnDate) {
+        this.returnDate = returnDate;
+    }
 
-	public void setReturnDate(LocalDate returnDate) {
-		this.returnDate = returnDate;
-	}
+    public String getStorageLocation() {
+        return storageLocation;
+    }
 
-	public String getStorageLocation() {
-		return storageLocation;
-	}
+    public void setStorageLocation(String storageLocation) {
+        this.storageLocation = storageLocation;
+    }
 
-	public void setStorageLocation(String storageLocation) {
-		this.storageLocation = storageLocation;
-	}
-	
-	
+    public BigDecimal  getReturnFee() {
+        return returnFee;
+    }
+
+    public void setReturnFee(BigDecimal  returnFee) {
+        this.returnFee = returnFee;
+    }
+
+    public Long getPaymentId() {
+        return paymentId;
+    }
+
+    public void setPaymentId(Long paymentId) {
+        this.paymentId = paymentId;
+    }
 }

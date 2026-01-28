@@ -1,110 +1,95 @@
 package com.vehicle.dto.response;
 
+
+
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import com.vehicle.enums.SparePartStatus;
 
-
 public class SparePartResponseDTO {
 
-	private Long id;
-	
-	private String partName;
-	
-	private String partCode;
-	
-	private String category;
-	
-	private Integer quantity;
-	
-	private Double price;
+    private Long id;
+    private String partName;
+    private String partCode;
+    private String category;
+    private Integer quantity;
+    private BigDecimal price;
+    private BigDecimal totalValue;
+    private SparePartStatus status;
+    private LocalDate createdAt;
 
-	private SparePartStatus status;
-	
-	private LocalDate createdAt;
+    public SparePartResponseDTO() {}
 
-	public SparePartResponseDTO(Long id, String partName, String partCode, String category, Integer quantity,
-			Double price, SparePartStatus status, LocalDate createdAt) {
-		super();
-		this.id = id;
-		this.partName = partName;
-		this.partCode = partCode;
-		this.category = category;
-		this.quantity = quantity;
-		this.price = price;
-		this.status = status;
-		this.createdAt = createdAt;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public SparePartResponseDTO() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public Long getId() {
-		return id;
-	}
+    public String getPartName() {
+        return partName;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setPartName(String partName) {
+        this.partName = partName;
+    }
 
-	public String getPartName() {
-		return partName;
-	}
+    public String getPartCode() {
+        return partCode;
+    }
 
-	public void setPartName(String partName) {
-		this.partName = partName;
-	}
+    public void setPartCode(String partCode) {
+        this.partCode = partCode;
+    }
 
-	public String getPartCode() {
-		return partCode;
-	}
+    public String getCategory() {
+        return category;
+    }
 
-	public void setPartCode(String partCode) {
-		this.partCode = partCode;
-	}
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
-	public String getCategory() {
-		return category;
-	}
+    public Integer getQuantity() {
+        return quantity;
+    }
 
-	public void setCategory(String category) {
-		this.category = category;
-	}
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
 
-	public Integer getQuantity() {
-		return quantity;
-	}
+    public BigDecimal getPrice() {
+        return price;
+    }
 
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
-	}
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
 
-	public Double getPrice() {
-		return price;
-	}
+    public BigDecimal getTotalValue() {
+        return totalValue;
+    }
 
-	public void setPrice(Double price) {
-		this.price = price;
-	}
+    public void setTotalValue(BigDecimal totalValue) {
+        this.totalValue = totalValue;
+    }
 
-	public SparePartStatus getStatus() {
-		return status;
-	}
+    public SparePartStatus getStatus() {
+        return status;
+    }
 
-	public void setStatus(SparePartStatus status) {
-		this.status = status;
-	}
+    public void setStatus(SparePartStatus status) {
+        this.status = status;
+    }
 
-	public LocalDate getCreatedAt() {
-		return createdAt;
-	}
+    public LocalDate getCreatedAt() {
+        return createdAt;
+    }
 
-	public void setCreatedAt(LocalDate createdAt) {
-		this.createdAt = createdAt;
-	}
-	
-	
-	
+    public void setCreatedAt(LocalDate createdAt) {
+        this.createdAt = createdAt;
+    }
 }

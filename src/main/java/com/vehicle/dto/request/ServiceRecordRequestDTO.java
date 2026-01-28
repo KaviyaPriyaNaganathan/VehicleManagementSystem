@@ -1,100 +1,76 @@
 package com.vehicle.dto.request;
 
+
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import com.vehicle.enums.ServiceStatus;
-import com.vehicle.models.User;
-import com.vehicle.models.Vehicle;
-
 
 public class ServiceRecordRequestDTO {
 
-	private Long id;
-	private Vehicle vehicle;
-	
-	private User technicianId;
-	
-	private LocalDate serviceDate;
-	
-	
-	private ServiceStatus status;
-	
-	private String description;
+    private Long vehicleId;
+    private Long technicianId;
+    private LocalDate serviceDate;
+    private ServiceStatus status;
+    private String description;
+    private BigDecimal serviceCost;
+    private String currency;
 
-	private Double serviceCost;
+    public ServiceRecordRequestDTO() {}
 
-	public ServiceRecordRequestDTO(Long id, Vehicle vehicle, User technicianId, LocalDate serviceDate, ServiceStatus status,
-			String description, Double serviceCost) {
-		super();
-		this.id = id;
-		this.vehicle = vehicle;
-		this.technicianId = technicianId;
-		this.serviceDate = serviceDate;
-		this.status = status;
-		this.description = description;
-		this.serviceCost = serviceCost;
-	}
+    public Long getVehicleId() {
+        return vehicleId;
+    }
 
-	public ServiceRecordRequestDTO() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    public void setVehicleId(Long vehicleId) {
+        this.vehicleId = vehicleId;
+    }
 
-	public Long getId() {
-		return id;
-	}
+    public Long getTechnicianId() {
+        return technicianId;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setTechnicianId(Long technicianId) {
+        this.technicianId = technicianId;
+    }
 
-	public Vehicle getVehicle() {
-		return vehicle;
-	}
+    public LocalDate getServiceDate() {
+        return serviceDate;
+    }
 
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
-	}
+    public void setServiceDate(LocalDate serviceDate) {
+        this.serviceDate = serviceDate;
+    }
 
-	public User getTechnicianId() {
-		return technicianId;
-	}
+    public ServiceStatus getStatus() {
+        return status;
+    }
 
-	public void setTechnicianId(User technicianId) {
-		this.technicianId = technicianId;
-	}
+    public void setStatus(ServiceStatus status) {
+        this.status = status;
+    }
 
-	public LocalDate getServiceDate() {
-		return serviceDate;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public void setServiceDate(LocalDate serviceDate) {
-		this.serviceDate = serviceDate;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public ServiceStatus getStatus() {
-		return status;
-	}
+    public BigDecimal getServiceCost() {
+        return serviceCost;
+    }
 
-	public void setStatus(ServiceStatus status) {
-		this.status = status;
-	}
+    public void setServiceCost(BigDecimal serviceCost) {
+        this.serviceCost = serviceCost;
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public String getCurrency() {
+        return currency;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public Double getServiceCost() {
-		return serviceCost;
-	}
-
-	public void setServiceCost(Double serviceCost) {
-		this.serviceCost = serviceCost;
-	}
-	
-	
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
 }

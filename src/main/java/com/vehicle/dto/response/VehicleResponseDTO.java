@@ -2,130 +2,110 @@ package com.vehicle.dto.response;
 
 import java.time.LocalDateTime;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
 import com.vehicle.enums.VehicleStatus;
 import com.vehicle.enums.VehicleType;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
 public class VehicleResponseDTO {
 
+    private Long id;
+    private String brand;
+    private String model;
+    private VehicleType vehicleType;
+    private String engineNumber;
+    private String chassisNumber;
+    private VehicleStatus status;
+    private LocalDateTime manufactureDate;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    private Double purchasePrice;
 
-	private Long id;
-	
-	private String brand;
-	
-	private String model;
+    public VehicleResponseDTO() {}
 
-	private VehicleType vehicleType;
-	
-	private String engineNumber;
-	
-	private String chassisNumber;
-	
-	private VehicleStatus status;
-		
-	private LocalDateTime createdAt;
-	
-	private LocalDateTime updatedAt;
+    public Long getId() {
+        return id;
+    }
 
-	public VehicleResponseDTO(Long id, String brand, String model, VehicleType vehicleType, String engineNumber,
-			String chassisNumber, VehicleStatus status, LocalDateTime createdAt, LocalDateTime updatedAt) {
-		super();
-		this.id = id;
-		this.brand = brand;
-		this.model = model;
-		this.vehicleType = vehicleType;
-		this.engineNumber = engineNumber;
-		this.chassisNumber = chassisNumber;
-		this.status = status;
-		this.createdAt = createdAt;
-		this.updatedAt = updatedAt;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public VehicleResponseDTO() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    public String getBrand() {
+        return brand;
+    }
 
-	public Long getId() {
-		return id;
-	}
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public String getModel() {
+        return model;
+    }
 
-	public String getBrand() {
-		return brand;
-	}
+    public void setModel(String model) {
+        this.model = model;
+    }
 
-	public void setBrand(String brand) {
-		this.brand = brand;
-	}
+    public VehicleType getVehicleType() {
+        return vehicleType;
+    }
 
-	public String getModel() {
-		return model;
-	}
+    public void setVehicleType(VehicleType vehicleType) {
+        this.vehicleType = vehicleType;
+    }
 
-	public void setModel(String model) {
-		this.model = model;
-	}
+    public String getEngineNumber() {
+        return engineNumber;
+    }
 
-	public VehicleType getVehicleType() {
-		return vehicleType;
-	}
+    public void setEngineNumber(String engineNumber) {
+        this.engineNumber = engineNumber;
+    }
 
-	public void setVehicleType(VehicleType vehicleType) {
-		this.vehicleType = vehicleType;
-	}
+    public String getChassisNumber() {
+        return chassisNumber;
+    }
 
-	public String getEngineNumber() {
-		return engineNumber;
-	}
+    public void setChassisNumber(String chassisNumber) {
+        this.chassisNumber = chassisNumber;
+    }
 
-	public void setEngineNumber(String engineNumber) {
-		this.engineNumber = engineNumber;
-	}
+    public VehicleStatus getStatus() {
+        return status;
+    }
 
-	public String getChassisNumber() {
-		return chassisNumber;
-	}
+    public void setStatus(VehicleStatus status) {
+        this.status = status;
+    }
 
-	public void setChassisNumber(String chassisNumber) {
-		this.chassisNumber = chassisNumber;
-	}
+    public LocalDateTime getManufactureDate() {
+        return manufactureDate;
+    }
 
-	public VehicleStatus getStatus() {
-		return status;
-	}
+    public void setManufactureDate(LocalDateTime manufactureDate) {
+        this.manufactureDate = manufactureDate;
+    }
 
-	public void setStatus(VehicleStatus status) {
-		this.status = status;
-	}
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
 
-	public LocalDateTime getCreatedAt() {
-		return createdAt;
-	}
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
 
-	public void setCreatedAt(LocalDateTime createdAt) {
-		this.createdAt = createdAt;
-	}
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
 
-	public LocalDateTime getUpdatedAt() {
-		return updatedAt;
-	}
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 
-	public void setUpdatedAt(LocalDateTime updatedAt) {
-		this.updatedAt = updatedAt;
-	}
-	
-	
+    public Double getPurchasePrice() {
+        return purchasePrice;
+    }
+
+    public void setPurchasePrice(Double purchasePrice) {
+        this.purchasePrice = purchasePrice;
+    }
 }

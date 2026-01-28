@@ -1,99 +1,85 @@
 package com.vehicle.dto.request;
 
+
+import java.time.LocalDateTime;
+
 import com.vehicle.enums.VehicleStatus;
 import com.vehicle.enums.VehicleType;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-
 public class VehicleRequestDTO {
 
-	private Long id;
-	private String brand;
-	
-	private String model;
+    private String brand;
+    private String model;
+    private VehicleType vehicleType;
+    private String engineNumber;
+    private String chassisNumber;
+    private VehicleStatus status;
+    private LocalDateTime manufactureDate;
+    private Double purchasePrice;
 
-	private VehicleType vehicleType;
-	
-	private String engineNumber;
-	
-	private String chassisNumber;
-	
-	private VehicleStatus status;
+    public VehicleRequestDTO() {}
 
-	public VehicleRequestDTO(Long id,String brand, String model, VehicleType vehicleType, String engineNumber,
-			String chassisNumber, VehicleStatus status) {
-		super();
-		this.id = id;
-		this.brand = brand;
-		this.model = model;
-		this.vehicleType = vehicleType;
-		this.engineNumber = engineNumber;
-		this.chassisNumber = chassisNumber;
-		this.status = status;
-	}
+    public String getBrand() {
+        return brand;
+    }
 
-	public Long getId() {
-		return id;
-	}
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public String getModel() {
+        return model;
+    }
 
-	public VehicleRequestDTO() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    public void setModel(String model) {
+        this.model = model;
+    }
 
-	public String getBrand() {
-		return brand;
-	}
+    public VehicleType getVehicleType() {
+        return vehicleType;
+    }
 
-	public void setBrand(String brand) {
-		this.brand = brand;
-	}
+    public void setVehicleType(VehicleType vehicleType) {
+        this.vehicleType = vehicleType;
+    }
 
-	public String getModel() {
-		return model;
-	}
+    public String getEngineNumber() {
+        return engineNumber;
+    }
 
-	public void setModel(String model) {
-		this.model = model;
-	}
+    public void setEngineNumber(String engineNumber) {
+        this.engineNumber = engineNumber;
+    }
 
-	public VehicleType getVehicleType() {
-		return vehicleType;
-	}
+    public String getChassisNumber() {
+        return chassisNumber;
+    }
 
-	public void setVehicleType(VehicleType vehicleType) {
-		this.vehicleType = vehicleType;
-	}
+    public void setChassisNumber(String chassisNumber) {
+        this.chassisNumber = chassisNumber;
+    }
 
-	public String getEngineNumber() {
-		return engineNumber;
-	}
+    public VehicleStatus getStatus() {
+        return status;
+    }
 
-	public void setEngineNumber(String engineNumber) {
-		this.engineNumber = engineNumber;
-	}
+    public void setStatus(VehicleStatus status) {
+        this.status = status;
+    }
 
-	public String getChassisNumber() {
-		return chassisNumber;
-	}
+    public LocalDateTime getManufactureDate() {
+        return manufactureDate;
+    }
 
-	public void setChassisNumber(String chassisNumber) {
-		this.chassisNumber = chassisNumber;
-	}
+    public void setManufactureDate(LocalDateTime manufactureDate) {
+        this.manufactureDate = manufactureDate;
+    }
 
-	public VehicleStatus getStatus() {
-		return status;
-	}
+    public Double getPurchasePrice() {
+        return purchasePrice;
+    }
 
-	public void setStatus(VehicleStatus status) {
-		this.status = status;
-	}
-	
-	
+    public void setPurchasePrice(Double purchasePrice) {
+        this.purchasePrice = purchasePrice;
+    }
 }

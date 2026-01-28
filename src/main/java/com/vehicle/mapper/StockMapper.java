@@ -10,12 +10,10 @@ public class StockMapper {
 	{
 		Stock stock = new Stock();
 		stock.setId(dto.getId());
-		stock.setAvailable(dto.getAvailable());
-		stock.setLocation(dto.getLocation());
-		stock.setQuantity(dto.getQuantity());
-		stock.setVehicle(dto.getVehicle());
-			
-		return stock;
+	    stock.setQuantity(dto.getQuantity());
+	    stock.setAvailable(dto.getAvailable());
+	    stock.setLocation(dto.getLocation());
+	    return stock;
 	}
 	
 	public static StockResponseDTO toResponse(Stock dto)

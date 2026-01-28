@@ -1,31 +1,26 @@
 package com.vehicle.dto.request;
 
-import com.vehicle.models.Vehicle;
-
-
 public class StockRequestDTO {
 
 	private Long id;
-	
-	private Vehicle vehicle;
-	
-	private Integer quantity;
-	
-	private Boolean available;
-	
-	private String location;
+    private Long vehicleId;
+    private Integer quantity;
+    private Boolean available;
+    private String location;
 
-	
-	public StockRequestDTO(Long id,Vehicle vehicle, Integer quantity, Boolean available, String location) {
-		super();
-		this.id =id;
-		this.vehicle = vehicle;
-		this.quantity = quantity;
-		this.available = available;
-		this.location = location;
-	}
+    public StockRequestDTO() {
+        super();
+    }
 
-	public Long getId() {
+    public StockRequestDTO(Long id, Long vehicleId, Integer quantity, Boolean available, String location) {
+        this.vehicleId = vehicleId;
+        this.quantity = quantity;
+        this.available = available;
+        this.location = location;
+        this.id = id;
+    }
+
+    public Long getId() {
 		return id;
 	}
 
@@ -33,42 +28,35 @@ public class StockRequestDTO {
 		this.id = id;
 	}
 
-	public StockRequestDTO() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	public Long getVehicleId() {
+        return vehicleId;
+    }
 
-	public Vehicle getVehicle() {
-		return vehicle;
-	}
+    public void setVehicleId(Long vehicleId) {
+        this.vehicleId = vehicleId;
+    }
 
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
-	}
+    public Integer getQuantity() {
+        return quantity;
+    }
 
-	public Integer getQuantity() {
-		return quantity;
-	}
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
 
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
-	}
+    public Boolean getAvailable() {
+        return available;
+    }
 
-	public Boolean getAvailable() {
-		return available;
-	}
+    public void setAvailable(Boolean available) {
+        this.available = available;
+    }
 
-	public void setAvailable(Boolean available) {
-		this.available = available;
-	}
+    public String getLocation() {
+        return location;
+    }
 
-	public String getLocation() {
-		return location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
-	}
-	
-	
+    public void setLocation(String location) {
+        this.location = location;
+    }
 }

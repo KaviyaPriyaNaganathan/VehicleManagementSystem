@@ -11,23 +11,25 @@ import com.vehicle.models.Vehicle;
 public class SparePartUsageMapper {
 	
 	
-    public static SparePartUsage toEntity(
-            SparePartUsageRequestDTO dto,
-            Vehicle vehicle,
-            SparePart sparePart) {
+    public static SparePartUsage toEntity(SparePartUsageRequestDTO dto,Vehicle vehicle,SparePart sparePart) 
+    {
 
         SparePartUsage usage = new SparePartUsage();
+        
         usage.setVehicle(vehicle);
         usage.setSparePart(sparePart);
         usage.setUsedQuantity(dto.getUsedQuantity());
         usage.setUsedDate(dto.getUsedDate());
         usage.setRemarks(dto.getRemarks());
+        
         return usage;
     }
 
-    public static SparePartUsageResponseDTO toResponse(SparePartUsage entity) {
+    public static SparePartUsageResponseDTO toResponse(SparePartUsage entity) 
+    {
 
         SparePartUsageResponseDTO response = new SparePartUsageResponseDTO();
+        
         response.setId(entity.getId());
         response.setVehicleId(entity.getVehicle().getId());
         response.setSparePartId(entity.getSparePart().getId());
@@ -36,6 +38,7 @@ public class SparePartUsageMapper {
         response.setRemarks(entity.getRemarks());
         response.setUnitPrice(entity.getUnitPrice());
         response.setTotalPrice(entity.getTotalPrice());
+        
         return response;
     }
 }

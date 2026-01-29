@@ -9,12 +9,12 @@ import com.vehicle.models.Vehicle;
 
 public class ServiceRecordMapper {
 
-    public static ServiceRecord toEntity(
-            ServiceRecordRequestDTO dto,
-            Vehicle vehicle,
-            User technician) {
+    public static ServiceRecord toEntity(ServiceRecordRequestDTO dto,Vehicle vehicle,User technician) 
+    {
 
         ServiceRecord record = new ServiceRecord();
+        
+        
         record.setVehicle(vehicle);
         record.setTechnician(technician);
         record.setServiceDate(dto.getServiceDate());
@@ -22,12 +22,16 @@ public class ServiceRecordMapper {
         record.setDescription(dto.getDescription());
         record.setServiceCost(dto.getServiceCost());
         record.setCurrency(dto.getCurrency());
+        
+        
         return record;
     }
 
-    public static ServiceRecordResponseDTO toResponse(ServiceRecord entity) {
+    public static ServiceRecordResponseDTO toResponse(ServiceRecord entity)
+    {
 
         ServiceRecordResponseDTO response = new ServiceRecordResponseDTO();
+        
         response.setId(entity.getId());
         response.setVehicleId(entity.getVehicle().getId());
         response.setTechnicianId(entity.getTechnician().getId());

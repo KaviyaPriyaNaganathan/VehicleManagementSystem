@@ -9,13 +9,11 @@ import com.vehicle.models.Vehicle;
 
 public class ReturnStorageMapper {
 
-    public static ReturnStorage toEntity(
-            ReturnStorageRequestDTO dto,
-            Vehicle vehicle,
-            Payment payment
-    ) {
+    public static ReturnStorage toEntity(ReturnStorageRequestDTO dto,Vehicle vehicle,Payment payment) 
+    {
 
         ReturnStorage entity = new ReturnStorage();
+        
         entity.setVehicle(vehicle);
         entity.setReturnType(dto.getReturnType());
         entity.setReason(dto.getReason());
@@ -27,10 +25,11 @@ public class ReturnStorageMapper {
         return entity;
     }
 
-    // Entity → Response DTO
-    public static ReturnStorageResponseDTO toResponseDto(ReturnStorage entity) {
+    public static ReturnStorageResponseDTO toResponseDto(ReturnStorage entity) 
+    {
 
         ReturnStorageResponseDTO dto = new ReturnStorageResponseDTO();
+        
         dto.setId(entity.getId());
         dto.setVehicleId(entity.getVehicle().getId());
         dto.setReturnType(entity.getReturnType());

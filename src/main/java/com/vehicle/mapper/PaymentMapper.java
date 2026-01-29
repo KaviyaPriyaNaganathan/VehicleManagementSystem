@@ -6,27 +6,34 @@ import com.vehicle.models.Payment;
 
 public class PaymentMapper {
 
-	public static Payment toEntity(PaymentRequestDTO dto) {
+	public static Payment toEntity(PaymentRequestDTO dto)
+	{
+		
         if (dto == null) return null;
 
-        Payment p = new Payment();
-        p.setAmount(dto.getAmount());
-        p.setCurrency(dto.getCurrency());
-        p.setStatus(dto.getStatus());
-        p.setTransactionRef(dto.getTransactionRef());
-        return p;
+        Payment payment = new Payment();
+        
+        payment.setAmount(dto.getAmount());
+        payment.setCurrency(dto.getCurrency());
+        payment.setStatus(dto.getStatus());
+        payment.setTransactionRef(dto.getTransactionRef());
+        return payment;
     }
 
-    public static PaymentResponseDTO toResponse(Payment p) {
-        if (p == null) return null;
+	
+	
+    public static PaymentResponseDTO toResponse(Payment payment)
+    {
+    	
+        if (payment == null) return null;
 
         PaymentResponseDTO dto = new PaymentResponseDTO();
-        dto.setId(p.getId());
-        dto.setAmount(p.getAmount());
-        dto.setCurrency(p.getCurrency());
-        dto.setStatus(p.getStatus());
-        dto.setTransactionRef(p.getTransactionRef());
-        dto.setCreatedAt(p.getCreatedAt());
+        dto.setId(payment.getId());
+        dto.setAmount(payment.getAmount());
+        dto.setCurrency(payment.getCurrency());
+        dto.setStatus(payment.getStatus());
+        dto.setTransactionRef(payment.getTransactionRef());
+        dto.setCreatedAt(payment.getCreatedAt());
         return dto;
     }
 }

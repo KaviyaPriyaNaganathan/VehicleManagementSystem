@@ -16,7 +16,6 @@ public class ReturnStorageRequestDTO {
     private String storageLocation;
     private BigDecimal  returnFee;
 
-    // Payment related
     private Long paymentId;
 
     public Long getVehicleId() {

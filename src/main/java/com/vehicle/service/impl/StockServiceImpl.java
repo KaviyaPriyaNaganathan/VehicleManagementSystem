@@ -31,7 +31,8 @@ public class StockServiceImpl implements StockService{
     @Override
     public StockResponseDTO createStock(StockRequestDTO dto) {
 
-        if (dto.getVehicleId() == null) {
+        if (dto.getVehicleId() == null)
+        {
             throw new IllegalArgumentException("Vehicle ID is required");
         }
 
@@ -39,14 +40,13 @@ public class StockServiceImpl implements StockService{
                 .orElseThrow(() -> new RuntimeException("Vehicle not found"));
 
         
-        if (dto.getQuantity() == 0) {
+        if (dto.getQuantity() == 0) 
             vehicle.setStatus(VehicleStatus.OUT_OF_STOCK);
            
-        } else {
+        else 
             vehicle.setStatus(VehicleStatus.IN_STOCK);
-        }
-
-        Stock stock = StockMapper.toEntity(dto, vehicle); // pass vehicle
+        
+        Stock stock = StockMapper.toEntity(dto, vehicle);
 
 
         stock.setAvailable(dto.getQuantity() != null && dto.getQuantity() > 0);
@@ -69,8 +69,7 @@ public class StockServiceImpl implements StockService{
     public StockResponseDTO getStockById(Long id) {
 
         Stock stock = stockRepository.findById(id)
-                .orElseThrow(() ->
-                        new RuntimeException("Stock not found with id " + id));
+                .orElseThrow(() -> new RuntimeException("Stock not found with id " + id));
 
         return StockMapper.toResponse(stock);
     }

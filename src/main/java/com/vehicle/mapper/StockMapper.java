@@ -9,11 +9,12 @@ import com.vehicle.models.Vehicle;
 
 public class StockMapper {
 
-    public static Stock toEntity(StockRequestDTO dto, Vehicle vehicle) {
+    public static Stock toEntity(StockRequestDTO dto, Vehicle vehicle) 
+    {
 
         Stock stock = new Stock();
 
-        stock.setVehicle(vehicle);           // ✅ ONLY this
+        stock.setVehicle(vehicle);        
         stock.setQuantity(dto.getQuantity());
         stock.setLocation(dto.getLocation());
         stock.setUnitPrice(dto.getUnitPrice());
@@ -39,10 +40,10 @@ public class StockMapper {
         dto.setPaymentStatus(stock.getPaymentStatus());
         dto.setLastPaymentDate(stock.getLastPaymentDate());
 
-        // ✅ IMPORTANT
-        if (stock.getVehicle() != null) {
+        if (stock.getVehicle() != null) 
+        {
             dto.setVehicleId(stock.getVehicle().getId());
-            dto.setVehicle(stock.getVehicle()); // optional
+            dto.setVehicle(stock.getVehicle());
         }
 
         return dto;

@@ -5,6 +5,7 @@ import com.vehicle.dto.response.UserResponseDTO;
 import com.vehicle.models.User;
 
 public class UserMapper {
+	
     public static User toEntity(UserRequestDTO dto) {
         User user = new User();
         user.setUsername(dto.getUsername());

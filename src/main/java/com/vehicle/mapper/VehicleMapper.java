@@ -7,8 +7,10 @@ import com.vehicle.models.Vehicle;
 
 public class VehicleMapper {
 
-    public static Vehicle toEntity(VehicleRequestDTO dto) {
+    public static Vehicle toEntity(VehicleRequestDTO dto)
+    {
         Vehicle vehicle = new Vehicle();
+        
         vehicle.setBrand(dto.getBrand());
         vehicle.setModel(dto.getModel());
         vehicle.setVehicleType(dto.getVehicleType());
@@ -17,12 +19,16 @@ public class VehicleMapper {
         vehicle.setStatus(dto.getStatus());
         vehicle.setManufactureDate(dto.getManufactureDate());
         vehicle.setPurchasePrice(dto.getPurchasePrice());
+        
         return vehicle;
     }
 
-    public static VehicleResponseDTO toResponse(Vehicle vehicle) {
-        VehicleResponseDTO response = new VehicleResponseDTO();
-        response.setId(vehicle.getId());
+    public static VehicleResponseDTO toResponse(Vehicle vehicle) 
+    {
+        
+    	VehicleResponseDTO response = new VehicleResponseDTO();
+        
+    	response.setId(vehicle.getId());
         response.setBrand(vehicle.getBrand());
         response.setModel(vehicle.getModel());
         response.setVehicleType(vehicle.getVehicleType());
@@ -33,6 +39,7 @@ public class VehicleMapper {
         response.setCreatedAt(vehicle.getCreatedAt());
         response.setUpdatedAt(vehicle.getUpdatedAt());
         response.setPurchasePrice(vehicle.getPurchasePrice());
+        
         return response;
     }
 }

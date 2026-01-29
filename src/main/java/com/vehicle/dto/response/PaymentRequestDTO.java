@@ -10,6 +10,8 @@ public class PaymentRequestDTO {
 	    private String currency;
 	    private PaymentStatus status;
 	    private String transactionRef;
+	    
+	    
 		public BigDecimal getAmount() {
 			return amount;
 		}

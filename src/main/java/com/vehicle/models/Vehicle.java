@@ -57,7 +57,6 @@ public class Vehicle {
     @Column(nullable = false)
     private Double purchasePrice;
 
-    // Constructors
     public Vehicle() {}
 
 	public Vehicle(Long id, String brand, String model, VehicleType vehicleType, String engineNumber,

@@ -41,20 +41,16 @@ public class ServiceRecordServiceImpl implements ServiceRecordService{
 		 Vehicle vehicle = vehicleRespository.findById(serviceRecord.getVehicleId())
 		            .orElseThrow(() -> new RuntimeException("Vehicle not found with id " + serviceRecord.getVehicleId()));
 
-		 User technician = userRepository.findByIdAndRole(
-				 serviceRecord.getTechnicianId(),
-		            UserRole.TECHNICIAN
-		    ).orElseThrow(() ->
-		            new RuntimeException("Invalid technician ID")
-		    );
+		 User technician = userRepository.findByIdAndRole(serviceRecord.getTechnicianId(),UserRole.TECHNICIAN)
+				 .orElseThrow(() ->new RuntimeException("Invalid technician ID"));
 		 
 		 
-		    ServiceRecord EntityserviceRecord = ServiceRecordMapper.toEntity(
-		    		serviceRecord,
-		            vehicle,
-		            technician
-		    );
+		    ServiceRecord EntityserviceRecord = ServiceRecordMapper.toEntity(serviceRecord,vehicle,technician);
+		    
+		    
 		    ServiceRecord saved = serviceRecordRepository.save(EntityserviceRecord);
+		    
+		    
 		    return ServiceRecordMapper.toResponse(saved);
 	}
 

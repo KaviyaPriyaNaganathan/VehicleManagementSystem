@@ -51,7 +51,6 @@ public class VehicleOwnership {
     @UpdateTimestamp
     private LocalDateTime updatedDate;
 
-    // Constructors
     public VehicleOwnership() {}
 
 	public VehicleOwnership(Long id, Vehicle vehicle, User customer, LocalDate ownershipStartDate,

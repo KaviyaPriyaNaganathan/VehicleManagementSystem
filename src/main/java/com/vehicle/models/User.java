@@ -43,7 +43,6 @@ public class User {
     @Column
     private LocalDateTime lastLoginAt;
 
-    // constructors
     public User() {}
 
     public User(Long id, String username, String password, UserRole role,

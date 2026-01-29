@@ -9,6 +9,7 @@ import com.vehicle.enums.ServiceStatus;
 public class ServiceRecordRequestDTO {
 
     private Long vehicleId;
+    private Long userId;     
     private Long technicianId;
     private LocalDate serviceDate;
     private ServiceStatus status;
@@ -22,7 +23,15 @@ public class ServiceRecordRequestDTO {
         return vehicleId;
     }
 
-    public void setVehicleId(Long vehicleId) {
+    public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+
+	public void setVehicleId(Long vehicleId) {
         this.vehicleId = vehicleId;
     }
 

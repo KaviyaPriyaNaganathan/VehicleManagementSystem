@@ -6,7 +6,6 @@ public class UpdateVehicleOwnershipStatusDTO {
 
 	 private OwnershipStatus status;
 
-	    // getter & setter
 	    public OwnershipStatus getStatus() {
 	        return status;
 	    }

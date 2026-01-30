@@ -11,6 +11,4 @@ import com.vehicle.models.SparePartUsage;
 
 public interface SparePartUsageRepository extends JpaRepository<SparePartUsage,Long>{
 
-	SparePartUsageResponseDTO createSparePartUsage(SparePartUsageRequestDTO sparePartUsage);
-
 }

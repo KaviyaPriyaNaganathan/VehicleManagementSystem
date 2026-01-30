@@ -48,8 +48,10 @@ public class SparePartUsage {
 
 
     @PrePersist
-    private void calculatePrices() {
-        if (sparePart != null && sparePart.getPrice() != null && usedQuantity != null) {
+    private void calculatePrices() 
+    {
+        if (sparePart != null && sparePart.getPrice() != null && usedQuantity != null) 
+        {
             this.unitPrice = sparePart.getPrice();
             this.totalPrice = this.unitPrice.multiply(BigDecimal.valueOf(usedQuantity));
         }

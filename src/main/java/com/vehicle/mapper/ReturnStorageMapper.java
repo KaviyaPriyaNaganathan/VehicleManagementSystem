@@ -1,47 +1,43 @@
 package com.vehicle.mapper;
 
-
 import com.vehicle.dto.request.ReturnStorageRequestDTO;
 import com.vehicle.dto.response.ReturnStorageResponseDTO;
-import com.vehicle.models.Payment;
 import com.vehicle.models.ReturnStorage;
 import com.vehicle.models.Vehicle;
 
 public class ReturnStorageMapper {
-
-    public static ReturnStorage toEntity(ReturnStorageRequestDTO dto,Vehicle vehicle,Payment payment) 
+    public static ReturnStorage toEntity(ReturnStorageRequestDTO dto,Vehicle vehicle) 
     {
 
         ReturnStorage entity = new ReturnStorage();
-        
+       
         entity.setVehicle(vehicle);
         entity.setReturnType(dto.getReturnType());
         entity.setReason(dto.getReason());
         entity.setReturnDate(dto.getReturnDate());
         entity.setStorageLocation(dto.getStorageLocation());
         entity.setReturnFee(dto.getReturnFee());
-        entity.setPayment(payment);
 
         return entity;
     }
 
-    public static ReturnStorageResponseDTO toResponseDto(ReturnStorage entity) 
-    {
+    public static ReturnStorageResponseDTO toResponse(ReturnStorage entity) 
+	{
 
-        ReturnStorageResponseDTO dto = new ReturnStorageResponseDTO();
+        ReturnStorageResponseDTO response = new ReturnStorageResponseDTO();
         
-        dto.setId(entity.getId());
-        dto.setVehicleId(entity.getVehicle().getId());
-        dto.setReturnType(entity.getReturnType());
-        dto.setReason(entity.getReason());
-        dto.setReturnDate(entity.getReturnDate());
-        dto.setStorageLocation(entity.getStorageLocation());
-        dto.setReturnFee(entity.getReturnFee());
+        response.setId(entity.getId());
+        response.setVehicleId(entity.getVehicle().getId());
+        response.setReturnType(entity.getReturnType());
+        response.setReason(entity.getReason());
+        response.setReturnDate(entity.getReturnDate());
+        response.setStorageLocation(entity.getStorageLocation());
+        response.setReturnFee(entity.getReturnFee());
 
         if (entity.getPayment() != null) {
-            dto.setPaymentId(entity.getPayment().getId());
+            response.setPaymentId(entity.getPayment().getId());
         }
 
-        return dto;
+        return response;
     }
 }

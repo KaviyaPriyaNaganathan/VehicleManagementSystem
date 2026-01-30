@@ -19,15 +19,18 @@ import com.vehicle.service.SparePartUsageService;
 @Service
 public class SparePartUsageServiceImpl implements SparePartUsageService{
 
-	private SparePartUsageRepository sparePartUsageRepository;
-	private SparePartRepository sparePartRepository;
-	private VehicleRespository vehicleRepository;
+	private final SparePartUsageRepository sparePartUsageRepository;
+	private final SparePartRepository sparePartRepository;
+	private final VehicleRespository vehicleRepository;
 	
 	
 	@Autowired
-	public SparePartUsageServiceImpl(SparePartUsageRepository sparePartUsageRepository) {
+	public SparePartUsageServiceImpl(SparePartUsageRepository sparePartUsageRepository,
+			SparePartRepository sparePartRepository, VehicleRespository vehicleRepository) {
 		super();
 		this.sparePartUsageRepository = sparePartUsageRepository;
+		this.sparePartRepository = sparePartRepository;
+		this.vehicleRepository = vehicleRepository;
 	}
 
 
@@ -47,6 +50,9 @@ public class SparePartUsageServiceImpl implements SparePartUsageService{
 		return SparePartUsageMapper.toResponse(saved);
 
 	}
+
+
+
 
 
 	@Override
